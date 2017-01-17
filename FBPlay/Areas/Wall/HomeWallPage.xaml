@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:FBPlay;assembly=FBPlay" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FBPlay.HomeWallPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+		<ContentView Grid.RowSpan="2" >
+		    <local:FriendsList x:Name="friendList" 
+					HorizontalOptions="Start" WidthRequest="300"			        
+				></local:FriendsList>
+		</ContentView>
+		
+        <Grid x:Name="header" BackgroundColor="{StaticResource BlueHeaderColor}" >
+            <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource BlueHeaderColor}">
+                <BoxView HorizontalOptions="FillAndExpand"></BoxView>
+				<!--<SearchBar 
+					BackgroundColor="{StaticResource BlueHeaderColor}"		
+						CancelButtonColor="{StaticResource BlueHeaderColor}"
+					HorizontalOptions="FillAndExpand" Placeholder="Search"></SearchBar>-->
+				<Image Source="friendlisticon.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="FriendListTapped" ></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+				</Image>
+            </StackLayout>
+        </Grid>
+        
+        <local:AdvancedListView BackgroundColor="Gray" HasUnevenRows="true" TranslationY="60" Grid.RowSpan="2" x:Name="myListView" ItemsSource="{Binding Items}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <local:PostView></local:PostView>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>        
+        </local:AdvancedListView>
+
+		<!--<BoxView x:Name="panContainer" Grid.RowSpan="2" BackgroundColor="Transparent" >
+            <BoxView.GestureRecognizers>
+                <PanGestureRecognizer PanUpdated="Handle_PanUpdated" ></PanGestureRecognizer>
+            </BoxView.GestureRecognizers>
+		</BoxView>-->
+		
+    </Grid>
+</ContentPage>

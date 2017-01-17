@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FBPlay.FriendsList"
+	    BackgroundColor="{StaticResource FriendListGrey}"
+		ItemsSource="{Binding FriendList}"
+		RowHeight="50" >
+    <ListView.Header>
+        <StackLayout HeightRequest="60" Orientation="Horizontal">
+            <SearchBar BackgroundColor="{StaticResource FriendListGrey}" HorizontalOptions="FillAndExpand" Placeholder="Search"></SearchBar>
+			<Image WidthRequest="60" Source="gearicon.png" ></Image>
+		</StackLayout>
+	</ListView.Header>
+	<ListView.ItemTemplate>
+        <DataTemplate>
+            <ViewCell>
+                <StackLayout Padding="5" Spacing="5" Orientation="Horizontal" BackgroundColor="{StaticResource FriendListGrey}" >
+                    <Image Source="{Binding Photo}"></Image>
+                    <Label Text="{Binding Name}"></Label>
+				</StackLayout>
+			</ViewCell>
+		</DataTemplate>
+	</ListView.ItemTemplate>    
+</ListView>
