@@ -1,19 +1,25 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FBPlay.FriendsList"
 	    BackgroundColor="{StaticResource FriendListGrey}"
+		xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+		xmlns:local="clr-namespace:FBPlay;assembly=FBPlay" 
 		ItemsSource="{Binding FriendList}"
 		RowHeight="50" >
     <ListView.Header>
-        <StackLayout HeightRequest="60" Orientation="Horizontal">
-            <SearchBar BackgroundColor="{StaticResource FriendListGrey}" HorizontalOptions="FillAndExpand" Placeholder="Search"></SearchBar>
-			<Image WidthRequest="40" Margin="10" Source="gearicon.png" ></Image>
+        <StackLayout HeightRequest="80" Orientation="Horizontal">
+            <SearchBar BackgroundColor="{StaticResource FriendListGrey}" HorizontalOptions="FillAndExpand" Placeholder="Search">
+        		<SearchBar.Effects>
+					<local:CustomSearchBarEffects PlaceHolderBackgroundColor="{StaticResource FriendListGrey}"/>
+				</SearchBar.Effects>
+			</SearchBar>
+			<Image HeightRequest="30" VerticalOptions="Center" Source="gearicon.png" ></Image>
 		</StackLayout>
 	</ListView.Header>
 	<ListView.ItemTemplate>
         <DataTemplate>
             <ViewCell>
                 <StackLayout Padding="5" Spacing="10" Orientation="Horizontal" BackgroundColor="{StaticResource FriendListGrey}" >
-                    <Image Source="{Binding Photo}"></Image>
+                    <ffimageloading:CachedImage  Source="{Binding Photo}" />
                     <Label Text="{Binding Name}" TextColor="White" VerticalTextAlignment="Center"></Label>
 				</StackLayout>
 			</ViewCell>

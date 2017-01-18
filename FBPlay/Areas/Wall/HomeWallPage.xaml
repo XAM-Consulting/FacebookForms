@@ -36,7 +36,7 @@
 	</ContentPage.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -48,12 +48,12 @@
 		
         <Grid x:Name="header" BackgroundColor="{StaticResource BlueHeaderColor}" >
             <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource BlueHeaderColor}">
-                <BoxView HorizontalOptions="FillAndExpand"></BoxView>
-				<!--<SearchBar 
-					BackgroundColor="{StaticResource BlueHeaderColor}"		
-						CancelButtonColor="{StaticResource BlueHeaderColor}"
-					HorizontalOptions="FillAndExpand" Placeholder="Search"></SearchBar>-->
-				<Image Source="friendlisticon.png" HeightRequest="40" Margin="5" VerticalOptions="End">
+				<SearchBar HorizontalOptions="FillAndExpand" Placeholder="Search" BackgroundColor="{StaticResource BlueHeaderColor}">
+					<SearchBar.Effects>
+						<local:CustomSearchBarEffects PlaceHolderBackgroundColor="{StaticResource BlueHeaderColor}"/>
+					</SearchBar.Effects>
+				</SearchBar>
+				<Image Source="friendlisticon.png" HeightRequest="40" VerticalOptions="Center">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="FriendListTapped" ></TapGestureRecognizer>
                     </Image.GestureRecognizers>

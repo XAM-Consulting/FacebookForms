@@ -2,6 +2,7 @@
 <local:InstrumentedGrid xmlns="http://xamarin.com/schemas/2014/forms" xmlns:fe="clr-namespace:FreshEssentials;assembly=FreshEssentials" 
 		xmlns:local="clr-namespace:FBPlay;assembly=FBPlay" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
 		x:Class="FBPlay.PostView"
         BackgroundColor="White"
 		Padding="10">
@@ -25,12 +26,12 @@
 		<RowDefinition Height="35"></RowDefinition>
 	</Grid.RowDefinitions>
 
-	<Image Grid.RowSpan="2" Source="{Binding AuthorPhoto}" ></Image>
+	<ffimageloading:CachedImage Grid.RowSpan="2" Source="{Binding AuthorPhoto}" />
     <Label Grid.Column="1" Grid.ColumnSpan="5" Text="{Binding AuthorName}" ></Label>
 	<Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" Text="{Binding Date}" ></Label>
 
 	<Label Grid.Row="2" Grid.ColumnSpan="6" Text="{Binding Content}" />
-    <Image Grid.Row="3" Grid.ColumnSpan="6" Source="{Binding ImageUrl}" ></Image>
+    <ffimageloading:CachedImage Grid.Row="3" Grid.ColumnSpan="6" Source="{Binding ImageUrl}" />
 
     <Label Grid.Row="4"  Grid.ColumnSpan="3"
 		Text="{Binding LikeCount, StringFormat='{0} Likes'}" ></Label>

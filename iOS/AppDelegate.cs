@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using FFImageLoading.Forms.Touch;
 using Foundation;
 using UIKit;
 
@@ -16,7 +16,12 @@ namespace FBPlay.iOS
 
             new FreshEssentials.iOS.AdvancedFrameRendereriOS();
 
+            CachedImageRenderer.Init();
+
             LoadApplication(new App());
+
+            UIApplication.SharedApplication.StatusBarHidden = false;
+            UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.BlackTranslucent;
 
             return base.FinishedLaunching(app, options);
         }

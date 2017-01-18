@@ -110,6 +110,21 @@
     <Reference Include="FreshEssentials.iOS">
       <HintPath>..\packages\FreshEssentials.2.1.2\lib\Xamarin.iOS10\FreshEssentials.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="WebP.Touch">
+      <HintPath>..\packages\WebP.Touch.1.0.2\lib\Xamarin.iOS10\WebP.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.7\lib\Xamarin.iOS10\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.7\lib\Xamarin.iOS10\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.7\lib\Xamarin.iOS10\FFImageLoading.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms.Touch">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.7\lib\Xamarin.iOS10\FFImageLoading.Forms.Touch.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FBPlay\FBPlay.csproj">
@@ -124,6 +139,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Renderers\" />
+    <Folder Include="Effects\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -138,6 +154,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderers\AdvancedListViewRenderer.cs" />
     <Compile Include="Renderers\GifImageViewRendereriOS.cs" />
+    <Compile Include="Effects\CustomSearchBarEffectsiOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\facebook-reactions-animation.gif" />
@@ -147,7 +164,6 @@
     <BundleResource Include="Resources\kid1.jpg" />
     <BundleResource Include="Resources\yoga1.jpg" />
     <BundleResource Include="Resources\michael.jpg" />
-    <BundleResource Include="Resources\gear.png" />
     <BundleResource Include="Resources\friendlisticon.png" />
     <BundleResource Include="Resources\gearicon.png" />
     <BundleResource Include="Resources\BrandonGrotesque-Regular.ttf" />
