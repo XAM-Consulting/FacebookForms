@@ -155,6 +155,7 @@
     <Compile Include="Renderers\AdvancedListViewRenderer.cs" />
     <Compile Include="Renderers\GifImageViewRendereriOS.cs" />
     <Compile Include="Effects\CustomSearchBarEffectsiOS.cs" />
+    <Compile Include="Effects\NoBorderEntryEffectiOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\facebook-reactions-animation.gif" />

@@ -43,6 +43,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <LogicalName>FriendsList.xaml</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="Areas\Wall\WhatOnYourMind.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>WhatOnYourMind.xaml</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -70,6 +74,10 @@
     <Compile Include="Areas\Menu\FriendListCellViewModel.cs" />
     <Compile Include="Areas\Wall\HomeWallListDataTemplateSelector.cs" />
     <Compile Include="Effects\CustomSearchBarEffects.cs" />
+    <Compile Include="Areas\Wall\WhatOnYourMind.xaml.cs">
+      <DependentUpon>WhatOnYourMind.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Effects\NoBorderEntryEffectiOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

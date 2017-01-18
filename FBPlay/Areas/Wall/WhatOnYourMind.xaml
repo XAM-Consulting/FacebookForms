@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:FBPlay;assembly=FBPlay" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FBPlay.WhatOnYourMind"
+		BackgroundColor="White" Margin="0,10,0,10">    
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="6*" />
+        <RowDefinition Height="4*" />
+    </Grid.RowDefinitions>
+    <StackLayout Orientation="Horizontal" Grid.ColumnSpan="3">
+        <Image Source="{Binding AuthorPhoto}" Margin="5" HeightRequest="40" />
+        <Entry Placeholder="What's on your mind?" >
+            <Entry.Effects>
+                <local:NoBorderEntryEffectiOS />
+            </Entry.Effects>
+		</Entry>
+    </StackLayout>
+    <Button Image="Video.png" Text="LIVE" TextColor="Black" FontAttributes="Bold" FontSize="10" Grid.Row="1" />
+    <Button Image="Photo.png" Text="PHOTO" TextColor="Black" FontAttributes="Bold" FontSize="10" Grid.Row="1" Grid.Column="1"/>
+    <Button Image="Marker.png" Text="CHECK IN" TextColor="Black" FontAttributes="Bold" FontSize="10" Grid.Row="1" Grid.Column="2"/>
+</Grid>

@@ -17,14 +17,14 @@ namespace FBPlay
         {
             if (likeArea.TranslationY == -35)
             {
-                await likeArea.TranslateTo(0, 0, 100, Easing.BounceIn);
+                await likeArea.TranslateTo(0, 0, 100, Easing.Linear);
                 await Task.Delay(50);
                 await likeArea.FadeTo(0, 50);
             }
             else
             {
                 await likeArea.FadeTo(1d, 20);
-                await likeArea.TranslateTo(0, -35, 100, Easing.BounceOut);
+                await likeArea.TranslateTo(0, -35, 100, Easing.Linear);
             }
         }
     }
