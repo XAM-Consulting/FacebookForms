@@ -6,15 +6,15 @@
     <ListView.Header>
         <StackLayout HeightRequest="60" Orientation="Horizontal">
             <SearchBar BackgroundColor="{StaticResource FriendListGrey}" HorizontalOptions="FillAndExpand" Placeholder="Search"></SearchBar>
-			<Image WidthRequest="60" Source="gearicon.png" ></Image>
+			<Image WidthRequest="40" Margin="10" Source="gearicon.png" ></Image>
 		</StackLayout>
 	</ListView.Header>
 	<ListView.ItemTemplate>
         <DataTemplate>
             <ViewCell>
-                <StackLayout Padding="5" Spacing="5" Orientation="Horizontal" BackgroundColor="{StaticResource FriendListGrey}" >
+                <StackLayout Padding="5" Spacing="10" Orientation="Horizontal" BackgroundColor="{StaticResource FriendListGrey}" >
                     <Image Source="{Binding Photo}"></Image>
-                    <Label Text="{Binding Name}"></Label>
+                    <Label Text="{Binding Name}" TextColor="White" VerticalTextAlignment="Center"></Label>
 				</StackLayout>
 			</ViewCell>
 		</DataTemplate>
