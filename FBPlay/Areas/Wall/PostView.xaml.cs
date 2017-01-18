@@ -15,16 +15,16 @@ namespace FBPlay
 
         async void Handle_Clicked(object sender, System.EventArgs e)
         {
-            if (likeArea.TranslationY == -50)
+            if (likeArea.TranslationY == -35)
             {
-                likeArea.TranslateTo(0, 0, 100, Easing.BounceIn);
+                await likeArea.TranslateTo(0, 0, 100, Easing.BounceIn);
                 await Task.Delay(50);
-                likeArea.FadeTo(0, 50);
+                await likeArea.FadeTo(0, 50);
             }
             else
             {
-                likeArea.FadeTo(1d, 20);
-                likeArea.TranslateTo(0, -50, 100, Easing.BounceOut);
+                await likeArea.FadeTo(1d, 20);
+                await likeArea.TranslateTo(0, -35, 100, Easing.BounceOut);
             }
         }
     }
