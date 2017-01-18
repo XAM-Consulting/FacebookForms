@@ -28,6 +28,25 @@ namespace FBPlay
             {
                 Resources.Add(prop.Name, prop.GetValue(resources));
             }
+
+            if (Device.OS == TargetPlatform.iOS)
+            {
+                var labelStyle = new Style(typeof(Label))
+                {
+                    Setters = {
+                        new Setter{Property = Label.FontFamilyProperty, Value="HelveticaNeue"}
+                    }
+                };
+                Resources.Add(labelStyle);
+
+                var buttonStyle = new Style(typeof(Button))
+                {
+                    Setters = {
+                        new Setter{Property = Button.FontFamilyProperty, Value="HelveticaNeue"}
+                    }
+                };
+                Resources.Add(buttonStyle);
+            }
         }
 
         protected override void OnStart()
