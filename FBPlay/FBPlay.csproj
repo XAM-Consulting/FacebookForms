@@ -68,6 +68,7 @@
     <Compile Include="Resources\IDynamicResources.cs" />
     <Compile Include="Areas\Menu\FriendListViewModel.cs" />
     <Compile Include="Areas\Menu\FriendListCellViewModel.cs" />
+    <Compile Include="Areas\Wall\HomeWallListDataTemplateSelector.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

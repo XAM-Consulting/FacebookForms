@@ -131,6 +131,9 @@
     <AndroidResource Include="Resources\drawable\gear.png" />
     <AndroidResource Include="Resources\drawable\friendlisticon.png" />
     <AndroidResource Include="Resources\drawable\gearicon.png" />
+    <AndroidResource Include="Resources\drawable\Marker.png" />
+    <AndroidResource Include="Resources\drawable\Photo.png" />
+    <AndroidResource Include="Resources\drawable\Video.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />

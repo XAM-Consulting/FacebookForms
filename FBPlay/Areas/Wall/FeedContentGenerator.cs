@@ -19,10 +19,12 @@ namespace FBPlay
             _generators.Add(Yoga);
         }
 
-        public List<FeedItemViewModel> GenerateFeedItem(int count)
+        public List<IFeedItemViewModel> GenerateFeedItem(int count)
         {
-            var items = new List<FeedItemViewModel>();
-            for (int i = 0; i < count; i++)
+            var items = new List<IFeedItemViewModel>();
+            items.Add(new WhatOnYourMindViewModel() { AuthorPhoto = "michael.jpg"});
+
+            for (int i = 1; i < count; i++)
             {
                 var idx = (int)(_random.NextDouble() * 100) % 5;
                 items.Add(_generators[idx]());

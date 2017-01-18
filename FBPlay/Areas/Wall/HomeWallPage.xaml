@@ -1,5 +1,39 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:FBPlay;assembly=FBPlay" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FBPlay.HomeWallPage">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<DataTemplate x:Key="WhatsOnYourMindTemplate" >
+				<ViewCell>
+					<Grid BackgroundColor="White" Margin="0,10,0,10">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="6*" />
+							<RowDefinition Height="4*" />
+						</Grid.RowDefinitions>
+						<StackLayout Orientation="Horizontal" Grid.ColumnSpan="3">
+							<Image Source="{Binding AuthorPhoto}" Margin="5" HeightRequest="40" />
+							<Label Text="What's on your mind?" VerticalTextAlignment="Center"/>
+						</StackLayout>
+						<Button Image="Video.png" Text="LIVE" TextColor="Black" FontAttributes="Bold" FontSize="10" Grid.Row="1" />
+						<Button Image="Photo.png" Text="PHOTO" TextColor="Black" FontAttributes="Bold" FontSize="10" Grid.Row="1" Grid.Column="1"/>
+						<Button Image="Marker.png" Text="CHECK IN" TextColor="Black" FontAttributes="Bold" FontSize="10" Grid.Row="1" Grid.Column="2"/>
+					</Grid>
+				</ViewCell>
+			</DataTemplate>
+		    <DataTemplate x:Key="FeedItemTemplate">
+                <ViewCell>
+                    <local:PostView Margin="0,5"></local:PostView>
+                </ViewCell>
+            </DataTemplate>
+			<local:HomeWallListDataTemplateSelector x:Key="homeWallListTemplateSelector"
+                WhatsOnYourMindTemplate="{StaticResource WhatsOnYourMindTemplate}"
+                FeedItemTemplate="{StaticResource FeedItemTemplate}" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"></RowDefinition>
@@ -19,7 +53,7 @@
 					BackgroundColor="{StaticResource BlueHeaderColor}"		
 						CancelButtonColor="{StaticResource BlueHeaderColor}"
 					HorizontalOptions="FillAndExpand" Placeholder="Search"></SearchBar>-->
-				<Image Source="friendlisticon.png">
+				<Image Source="friendlisticon.png" HeightRequest="40" Margin="5" VerticalOptions="End">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="FriendListTapped" ></TapGestureRecognizer>
                     </Image.GestureRecognizers>
@@ -27,14 +61,9 @@
             </StackLayout>
         </Grid>
         
-        <local:AdvancedListView BackgroundColor="Gray" HasUnevenRows="true" TranslationY="60" Grid.RowSpan="2" x:Name="myListView" ItemsSource="{Binding Items}" >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <local:PostView></local:PostView>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>        
+        <local:AdvancedListView BackgroundColor="#D7DBDF" HasUnevenRows="true" TranslationY="60" Grid.RowSpan="2" x:Name="myListView" 
+				ItemsSource="{Binding Items}" ItemTemplate="{StaticResource homeWallListTemplateSelector}" SeparatorVisibility="None"
+				>      
         </local:AdvancedListView>
 
 		<!--<BoxView x:Name="panContainer" Grid.RowSpan="2" BackgroundColor="Transparent" >

@@ -2,7 +2,12 @@
 
 namespace FBPlay
 {
-    public class FeedItemViewModel
+    public interface IFeedItemViewModel
+    {
+        string AuthorPhoto { get; set; }
+    }
+
+    public class FeedItemViewModel : IFeedItemViewModel
     {
         public string AuthorPhoto { get; set; }
         public DateTime Date { get; set; }
@@ -17,5 +22,10 @@ namespace FBPlay
         public FeedItemViewModel()
         {
         }
+    }
+
+    public class WhatOnYourMindViewModel : IFeedItemViewModel
+    {
+        public string AuthorPhoto { get; set; }
     }
 }
