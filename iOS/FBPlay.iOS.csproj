@@ -170,6 +170,13 @@
     <BundleResource Include="Resources\Marker.png" />
     <BundleResource Include="Resources\Photo.png" />
     <BundleResource Include="Resources\Video.png" />
+    <BundleResource Include="Resources\OpenSans-Bold.ttf" />
+    <BundleResource Include="Resources\OpenSans-Regular.ttf" />
+    <BundleResource Include="Resources\OpenSans-Semibold.ttf" />
+    <BundleResource Include="Resources\Share.png" />
+    <BundleResource Include="Resources\Comments.png" />
+    <BundleResource Include="Resources\Like.png" />
+    <BundleResource Include="Resources\Jesse.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

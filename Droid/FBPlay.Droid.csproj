@@ -146,6 +146,9 @@
     <AndroidResource Include="Resources\drawable\Marker.png" />
     <AndroidResource Include="Resources\drawable\Photo.png" />
     <AndroidResource Include="Resources\drawable\Video.png" />
+    <AndroidResource Include="Resources\drawable\Share.png" />
+    <AndroidResource Include="Resources\drawable\Comments.png" />
+    <AndroidResource Include="Resources\drawable\Like.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />

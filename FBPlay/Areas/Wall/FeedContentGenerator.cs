@@ -68,9 +68,9 @@ namespace FBPlay
         {
             return new FeedItemViewModel
             {
-                AuthorPhoto = "michael.jpg",
+                AuthorPhoto = "Jesse.png",
                 Date = DateTime.Now,
-                AuthorName = "Mark James",
+                AuthorName = "Jesse Jiang",
 
                 Content = "Seriously how many holidays can you go on",
                 ImageUrl = "beach3.jpeg",

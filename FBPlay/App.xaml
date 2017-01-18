@@ -6,13 +6,9 @@
                     <Setter Property="FontSize" Value="26"/>
                     <Setter Property="HorizontalTextAlignment" Value="Center"/>
                     <Setter Property="FontFamily" Value="BrandonGrotesque-Regular"/>
-                    <!--<Setter Property="TextColor" Value="{StaticResource BlueHeaderColor}"/>-->
             </Style>
-    		<Style x:Key="BlueButtonStyle" TargetType="Button">
-                <!--<Setter Property="BackgroundColor" Value="{StaticResource BlueHeaderColor}"/>-->
-                <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="HeightRequest" Value="60"/>
-                <Setter Property="TextColor" Value="White"/>
+    		<Style x:Key="GreyButtonStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="#7F8592"/>
                 <Setter Property="FontFamily" Value="OpenSans"/>
             </Style>
         </ResourceDictionary>

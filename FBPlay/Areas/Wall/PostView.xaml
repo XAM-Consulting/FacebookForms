@@ -44,8 +44,8 @@
     	</fe:AdvancedFrame>
 	</ContentView>
 	
-    <Button Grid.Row="5" Grid.ColumnSpan="2" Text="Like" Clicked="Handle_Clicked" ></Button>
-    <Button Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="2" Text="Comment"></Button>
-	<Button Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="4" Text="Share"></Button>
+    <Button Image="Like.png" Grid.Row="5" Grid.ColumnSpan="2" Text="Like" Clicked="Handle_Clicked" Style="{StaticResource GreyButtonStyle}"></Button>
+    <Button Image="Comments.png" Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="2" Text="Comment" Style="{StaticResource GreyButtonStyle}"></Button>
+	<Button Image="Share.png" Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="4" Text="Share" Style="{StaticResource GreyButtonStyle}"></Button>
 
 </local:InstrumentedGrid>
