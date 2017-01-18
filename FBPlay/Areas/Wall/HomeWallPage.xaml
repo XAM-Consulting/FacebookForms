@@ -5,6 +5,9 @@
 			<DataTemplate x:Key="WhatsOnYourMindTemplate" >
 				<ViewCell>
 					<Grid BackgroundColor="White" Margin="0,10,0,10">
+						<Grid.GestureRecognizers>
+					        <TapGestureRecognizer Command="{Binding FakeCommand}" ></TapGestureRecognizer>
+						</Grid.GestureRecognizers>
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition />
 							<ColumnDefinition />
@@ -63,6 +66,7 @@
         
         <local:AdvancedListView BackgroundColor="#D7DBDF" HasUnevenRows="true" TranslationY="60" Grid.RowSpan="2" x:Name="myListView" 
 				ItemsSource="{Binding Items}" ItemTemplate="{StaticResource homeWallListTemplateSelector}" SeparatorVisibility="None"
+				ItemTapped="Handle_ItemTapped"
 				>      
         </local:AdvancedListView>
 

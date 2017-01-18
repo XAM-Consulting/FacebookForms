@@ -20,6 +20,11 @@ namespace FBPlay
             //panContainer.IsVisible = true;
         }
 
+        void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
+        {
+            myListView.SelectedItem = null;
+        }
+
         protected override void OnSizeAllocated(double width, double height)
         {
             base.OnSizeAllocated(width, height);

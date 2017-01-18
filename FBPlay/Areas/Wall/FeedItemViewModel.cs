@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FBPlay
 {
@@ -18,6 +19,8 @@ namespace FBPlay
 
         public int LikeCount { get; set; }
         public int CommentCount { get; set; }
+
+        public List<string> EmojiTypes { get; set; }
 
         public FeedItemViewModel()
         {

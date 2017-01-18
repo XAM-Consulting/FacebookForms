@@ -33,8 +33,8 @@
 	<Label Grid.Row="2" Grid.ColumnSpan="6" Text="{Binding Content}" />
     <ffimageloading:CachedImage Grid.Row="3" Grid.ColumnSpan="6" Source="{Binding ImageUrl}" />
 
-    <Label Grid.Row="4"  Grid.ColumnSpan="3"
-		Text="{Binding LikeCount, StringFormat='{0} Likes'}" ></Label>
+	<StackLayout Grid.Row="4"  Grid.ColumnSpan="3" x:Name="LikeLayout" Orientation="Horizontal" />
+
 	<Label Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3" HorizontalTextAlignment="End"
 		Text="{Binding CommentCount, StringFormat='{0} Comments'}" ></Label>
 	
