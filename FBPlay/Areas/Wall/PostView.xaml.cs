@@ -34,27 +34,27 @@ namespace FBPlay
 			}
 		}
 
-        protected override void OnBindingContextChanged()
-        {
-            base.OnBindingContextChanged();
+        //protected override void OnBindingContextChanged()
+        //{
+        //    base.OnBindingContextChanged();
 
-            var viewModel = this.BindingContext as FeedItemViewModel;
-            if (viewModel != null && LikeLayout.Children.Count == 0)
-            {
-                foreach (string imagesource in viewModel.EmojiTypes)
-                {
-                    var image = new CachedImage
-                    {
-                        HeightRequest = 20,
-                        WidthRequest = 20,
-                        Source = imagesource
-                    };
-                    LikeLayout.Children.Add(image);
-                }
-                var label = new Label { Text = $"{viewModel.LikeCount} Likes" };
-                LikeLayout.Children.Add(label);
-            }
-        }
+        //    var viewModel = this.BindingContext as FeedItemViewModel;
+        //    if (viewModel != null && LikeLayout.Children.Count == 0)
+        //    {
+        //        foreach (string imagesource in viewModel.EmojiTypes)
+        //        {
+        //            var image = new CachedImage
+        //            {
+        //                HeightRequest = 20,
+        //                WidthRequest = 20,
+        //                Source = imagesource
+        //            };
+        //            LikeLayout.Children.Add(image);
+        //        }
+        //        var label = new Label { Text = $"{viewModel.LikeCount} Likes" };
+        //        LikeLayout.Children.Add(label);
+        //    }
+        //}
 
 
         async void Handle_Clicked(object sender, System.EventArgs e)
