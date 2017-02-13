@@ -1,4 +1,5 @@
 ﻿using System;
+using Xamarin.Forms;
 
 namespace FBPlay
 {
@@ -19,9 +20,12 @@ namespace FBPlay
         public int LikeCount { get; set; }
         public int CommentCount { get; set; }
 
-        public FeedItemViewModel()
+		public FeedItemViewModel(Command tappedCommand)
         {
+			TappedCommand = tappedCommand;
         }
+
+		public Command TappedCommand { get; set; }
     }
 
     public class WhatOnYourMindViewModel : IFeedItemViewModel

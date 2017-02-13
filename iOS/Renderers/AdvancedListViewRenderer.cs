@@ -13,10 +13,10 @@ namespace FBPlay.iOS
     {
         void Control_Scrolled(object sender, EventArgs e)
         {
-            var aLV = this.Element as AdvancedListView;
-            if (aLV != null && aLV.Scrolled != null)
+            var advancedListView = this.Element as AdvancedListView;
+            if (advancedListView != null && advancedListView.Scrolled != null)
             {
-                aLV.Scrolled(new Xamarin.Forms.Point(Control.ContentOffset.X, Control.ContentOffset.Y));
+                advancedListView.Scrolled(new Xamarin.Forms.Point(Control.ContentOffset.X, Control.ContentOffset.Y));
             }
         }
 
@@ -30,21 +30,7 @@ namespace FBPlay.iOS
             base.OnElementChanged(e);
 
             this.Control.Scrolled += Control_Scrolled;
-
-            if (e.OldElement != null)
-            {
-                ((AdvancedListView)e.OldElement).ScrollToPoint = null;
-            }
-
-            if (e.NewElement != null)
-            {
-                ((AdvancedListView)e.NewElement).ScrollToPoint = ScrollToPoint;
-            }
         }
 
-        void ScrollToPoint(Xamarin.Forms.Point obj)
-        {
-            this.Control.ContentOffset = new CoreGraphics.CGPoint(obj.X, obj.Y);
-        }
     }
 }

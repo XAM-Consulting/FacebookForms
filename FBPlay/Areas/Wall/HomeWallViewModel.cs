@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace FBPlay
 {
@@ -7,9 +8,9 @@ namespace FBPlay
     {
         public List<IFeedItemViewModel> Items { get; set; }
 
-        public HomeWallViewModel()
+        public HomeWallViewModel(ContentPage page)
         {
-            Items = FeedContentGenerator.Instance.GenerateFeedItem(100);
+			Items = new FeedContentGenerator(page.Navigation).GenerateFeedItem(5000);
         }
     }
 }

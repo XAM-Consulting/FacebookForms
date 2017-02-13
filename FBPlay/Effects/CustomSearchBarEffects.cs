@@ -10,6 +10,5 @@ namespace FBPlay
         public CustomSearchBarEffects() : base("XamConsulting.CustomSearchBarEffects")
         {
         }
-
     }
 }

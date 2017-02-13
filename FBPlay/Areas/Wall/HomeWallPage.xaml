@@ -1,9 +1,13 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:FBPlay;assembly=FBPlay" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FBPlay.HomeWallPage">
 	<ContentPage.Resources>
 		<ResourceDictionary>
 			<DataTemplate x:Key="WhatsOnYourMindTemplate" >
 				<ViewCell>
+					<ViewCell.ContextActions>
+                      <MenuItem Text="Share" />
+                      <MenuItem Text="Buy" Command="{Binding AddToBasket}" />
+                    </ViewCell.ContextActions>
 					<ContentView>
                         <ContentView.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding FakeCommand}" ></TapGestureRecognizer>
@@ -32,7 +36,6 @@
             <RowDefinition Height="80"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-
 		<ContentView Grid.RowSpan="2" >
 		    <local:FriendsList x:Name="friendList" 
 					HorizontalOptions="Start" WidthRequest="300"			        
@@ -55,7 +58,7 @@
         </Grid>
         
         <local:AdvancedListView BackgroundColor="#D7DBDF" HasUnevenRows="true" TranslationY="60" Grid.RowSpan="2" x:Name="myListView" 
-				ItemsSource="{Binding Items}" ItemTemplate="{StaticResource homeWallListTemplateSelector}" SeparatorVisibility="None"
+				ItemsSource="{Binding Items}" ItemTemplate="{StaticResource homeWallListTemplateSelector}" 
 				>      
         </local:AdvancedListView>
 

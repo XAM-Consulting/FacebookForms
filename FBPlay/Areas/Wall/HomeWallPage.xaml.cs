@@ -9,18 +9,28 @@ namespace FBPlay
     {
         public HomeWallPage()
         {
+			NavigationPage.SetHasNavigationBar(this, false);
+            NavigationPage.SetHasBackButton(this, false);
+
             InitializeComponent();
 
-            BindingContext = new HomeWallViewModel();
+            BindingContext = new HomeWallViewModel(this);
 
             myListView.Scrolled += MyListView_Scrolled;
 
             var friendListGrey = Application.Current.Resources["FriendListGrey"];
 
             //panContainer.IsVisible = true;
+
+			SizeChanged += HomeWallPage_SizeChanged;
         }
 
-        protected override void OnSizeAllocated(double width, double height)
+		void HomeWallPage_SizeChanged(object sender, EventArgs e)
+		{
+			App.SetWidthHeight(Width, Height);
+		}
+
+		protected override void OnSizeAllocated(double width, double height)
         {
             base.OnSizeAllocated(width, height);
 
@@ -48,19 +58,21 @@ namespace FBPlay
             //if (panRunning)
             //    return;
 
+            var headerHeight = 60;
+
             if (obj.Y <= 0)
             {
                 header.TranslationY = 0;
-                myListView.TranslationY = 60;
+                myListView.TranslationY = headerHeight;
             }
-            else if (obj.Y <= 60)
+            else if (obj.Y <= headerHeight)
             {
                 header.TranslationY = -obj.Y;
-                myListView.TranslationY = -obj.Y + 60;
+                myListView.TranslationY = -obj.Y + headerHeight;
             }
-            else if (obj.Y > 60) //scrolled 
+            else if (obj.Y > headerHeight) //scrolled 
             {
-                header.TranslationY = -60;
+                header.TranslationY = -headerHeight;
                 myListView.TranslationY = 0;
             }
         }

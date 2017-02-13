@@ -1,13 +1,22 @@
 ﻿using Xamarin.Forms;
 using System.Reflection;
 using System.Linq;
+using Xamarin.Forms.Xaml;
+
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
 namespace FBPlay
 {
     public partial class App : Application
     {
-        public static double Width { get; set; }
-        public static double Height { get; set; }
+		public static double ScreenWidth { get; set; }
+		public static double ScreenHeight { get; set; }
+
+		public static void SetWidthHeight(double width, double height)
+		{
+			ScreenWidth = width;
+			ScreenHeight = height;
+		}
 
         public App()
         {
@@ -15,7 +24,7 @@ namespace FBPlay
 
             LoadDynamicResources(new DynamicResources());
 
-            MainPage = new HomeWallPage();
+			MainPage = new NavigationPage(new HomeWallPage());
         }
 
         void LoadDynamicResources(IDynamicResources resources)

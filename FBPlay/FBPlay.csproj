@@ -47,6 +47,21 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <LogicalName>WhatOnYourMind.xaml</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="Areas\Wall\LottieAnimationView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\PostPages\AnimationPostPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\PostPages\PanDemoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\PostPages\PinchDemoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\PostPages\PostPageTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -72,12 +87,31 @@
     <Compile Include="Resources\IDynamicResources.cs" />
     <Compile Include="Areas\Menu\FriendListViewModel.cs" />
     <Compile Include="Areas\Menu\FriendListCellViewModel.cs" />
-    <Compile Include="Areas\Wall\HomeWallListDataTemplateSelector.cs" />
+    <Compile Include="Areas\Wall\MessageViewDataTemplateSelector.cs" />
     <Compile Include="Effects\CustomSearchBarEffects.cs" />
     <Compile Include="Areas\Wall\WhatOnYourMind.xaml.cs">
       <DependentUpon>WhatOnYourMind.xaml</DependentUpon>
     </Compile>
     <Compile Include="Effects\NoBorderEntryEffectiOS.cs" />
+    <Compile Include="Behaviors\NameValidationBehavior.cs" />
+    <Compile Include="Areas\Wall\LottieAnimationView.xaml.cs">
+      <DependentUpon>LottieAnimationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PostPages\AnimationPostPage.xaml.cs">
+      <DependentUpon>AnimationPostPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PanContainer.cs" />
+    <Compile Include="Areas\PostPages\PanDemoPage.xaml.cs">
+      <DependentUpon>PanDemoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PinchToZoomContainer.cs" />
+    <Compile Include="Areas\PostPages\PinchDemoPage.xaml.cs">
+      <DependentUpon>PinchDemoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PostPages\PostPageTemplate.xaml.cs">
+      <DependentUpon>PostPageTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\DoubleExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -112,6 +146,9 @@
     <Folder Include="Areas\Menu\" />
     <Folder Include="Resources\" />
     <Folder Include="Effects\" />
+    <Folder Include="Behaviors\" />
+    <Folder Include="Areas\PostPages\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

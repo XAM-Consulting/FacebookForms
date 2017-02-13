@@ -125,6 +125,15 @@
     <Reference Include="FFImageLoading.Forms.Touch">
       <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.7\lib\Xamarin.iOS10\FFImageLoading.Forms.Touch.dll</HintPath>
     </Reference>
+    <Reference Include="Lottie.iOS">
+      <HintPath>..\packages\Com.Airbnb.iOS.Lottie.1.0.0.4\lib\xamarinios\Lottie.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Lottie.Forms">
+      <HintPath>..\packages\Com.Airbnb.Xamarin.Forms.Lottie.1.0.0.4\lib\xamarinios\Lottie.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Lottie.Forms.iOS">
+      <HintPath>..\packages\Com.Airbnb.Xamarin.Forms.Lottie.1.0.0.4\lib\xamarinios\Lottie.Forms.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FBPlay\FBPlay.csproj">
@@ -158,7 +167,7 @@
     <Compile Include="Effects\NoBorderEntryEffectiOS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\facebook-reactions-animation.gif" />
+    <BundleResource Include="Resources\facebookreactionsanimation.gif" />
     <BundleResource Include="Resources\beach1.jpeg" />
     <BundleResource Include="Resources\beach2.jpg" />
     <BundleResource Include="Resources\beach3.jpeg" />
@@ -178,6 +187,7 @@
     <BundleResource Include="Resources\Comments.png" />
     <BundleResource Include="Resources\Like.png" />
     <BundleResource Include="Resources\Jesse.png" />
+    <BundleResource Include="Resources\MonoMonkey.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FBPlay.App">
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FBPlay.App"
+	xmlns:local="clr-namespace:FBPlay;assembly=FBPlay" >
     <Application.Resources>
         <ResourceDictionary>
             <Style x:Key="HeadingStyle" TargetType="Label">
@@ -11,6 +12,9 @@
                 <Setter Property="TextColor" Value="#7F8592"/>
                 <Setter Property="FontFamily" Value="OpenSans"/>
             </Style>
+			<ControlTemplate x:Key="PostPageTemplate"  >
+				<local:PostPageTemplate />
+			</ControlTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

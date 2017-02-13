@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:local="clr-namespace:FBPlay;assembly=FBPlay" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="FBPlay.PostPageTemplate">
+	<Grid.RowDefinitions>
+		<RowDefinition Height="50" />
+		<RowDefinition Height="*"/>
+	</Grid.RowDefinitions>
+	<BoxView BackgroundColor="Gray"></BoxView>
+		
+	<Label Text="Post Page Template"></Label>
+	
+	<ContentPresenter Grid.Row="1"/>
+</Grid>

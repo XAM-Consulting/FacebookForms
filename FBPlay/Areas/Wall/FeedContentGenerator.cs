@@ -1,23 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace FBPlay
 {
     public class FeedContentGenerator
     {
-        public static FeedContentGenerator Instance = new FeedContentGenerator();
-
         List<Func<FeedItemViewModel>> _generators = new List<Func<FeedItemViewModel>>();
         Random _random = new Random();
+		INavigation _navigation;
 
-        public FeedContentGenerator()
+        public FeedContentGenerator(INavigation navigation)
         {
+			_navigation = navigation;
             _generators.Add(Beach1);
             _generators.Add(Beach2);
             _generators.Add(Beach3);
             _generators.Add(Kid);
-            _generators.Add(Yoga);
+			_generators.Add(Yoga);
+            _generators.Add(PanDemo);
         }
+
+		Command GetCommand()
+		{
+			return new Command(() =>
+			{
+				_navigation.PushAsync(new AnimationPostPage());
+			});
+		}
+
+		Command PanSampleCommand()
+		{
+			return new Command(() =>
+			{
+				_navigation.PushAsync(new PanDemoPage());
+			});
+		}
 
         public List<IFeedItemViewModel> GenerateFeedItem(int count)
         {
@@ -26,7 +44,8 @@ namespace FBPlay
 
             for (int i = 1; i < count; i++)
             {
-                var idx = (int)(_random.NextDouble() * 100) % 5;
+				var idx = (int)(_random.NextDouble() * 100) % _generators.Count;
+				System.Diagnostics.Debug.WriteLine(idx);
                 items.Add(_generators[idx]());
             }
             return items;
@@ -34,7 +53,7 @@ namespace FBPlay
 
         FeedItemViewModel Beach1()
         {
-            return new FeedItemViewModel
+			return new FeedItemViewModel(GetCommand())
             {
                 AuthorPhoto = "michael.jpg",
                 Date = DateTime.Now,
@@ -48,9 +67,25 @@ namespace FBPlay
             };
         }
 
-        FeedItemViewModel Beach2()
+		FeedItemViewModel PanDemo()
+		{
+			return new FeedItemViewModel(PanSampleCommand())
+			{
+				AuthorPhoto = "michael.jpg",
+				Date = DateTime.Now,
+				AuthorName = "Peter Green",
+
+				Content = "This is a pan demo!",
+				ImageUrl = "MonoMonkey.jpg",
+
+				LikeCount = 2,
+				CommentCount = 5
+			};
+		}
+
+		FeedItemViewModel Beach2()
         {
-            return new FeedItemViewModel
+			return new FeedItemViewModel(GetCommand())
             {
                 AuthorPhoto = "michael.jpg",
                 Date = DateTime.Now,
@@ -66,7 +101,7 @@ namespace FBPlay
 
         FeedItemViewModel Beach3()
         {
-            return new FeedItemViewModel
+			return new FeedItemViewModel(GetCommand())
             {
                 AuthorPhoto = "Jesse.png",
                 Date = DateTime.Now,
@@ -82,7 +117,7 @@ namespace FBPlay
 
         FeedItemViewModel Kid()
         {
-            return new FeedItemViewModel
+			return new FeedItemViewModel(GetCommand())
             {
                 AuthorPhoto = "michael.jpg",
                 Date = DateTime.Now,
@@ -98,7 +133,7 @@ namespace FBPlay
 
         FeedItemViewModel Yoga()
         {
-            return new FeedItemViewModel
+			return new FeedItemViewModel(GetCommand())
             {
                 AuthorPhoto = "michael.jpg",
                 Date = DateTime.Now,
