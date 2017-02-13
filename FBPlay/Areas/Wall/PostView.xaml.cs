@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using FFImageLoading.Forms;
 using Xamarin.Forms;
 
 namespace FBPlay
@@ -23,7 +22,7 @@ namespace FBPlay
             {
                 foreach (string imagesource in viewModel.EmojiTypes)
                 {
-                    var image = new CachedImage
+                    var image = new Image
                     {
                         HeightRequest = 20,
                         WidthRequest = 20,

@@ -1,16 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FBPlay.App">
-    <Application.Resources>
-        <ResourceDictionary>
-            <Style x:Key="HeadingStyle" TargetType="Label">
-                    <Setter Property="FontSize" Value="26"/>
-                    <Setter Property="HorizontalTextAlignment" Value="Center"/>
-                    <Setter Property="FontFamily" Value="BrandonGrotesque-Regular"/>
-            </Style>
-    		<Style x:Key="GreyButtonStyle" TargetType="Button">
-                <Setter Property="TextColor" Value="#7F8592"/>
-                <Setter Property="FontFamily" Value="OpenSans"/>
-            </Style>
-        </ResourceDictionary>
-    </Application.Resources>
+	<Application.Resources>
+		<ResourceDictionary>
+			<Style x:Key="HeadingStyle" TargetType="Label">
+				<Setter Property="FontSize" Value="26" />
+				<Setter Property="HorizontalTextAlignment" Value="Center" />
+			</Style>
+			
+			<Style x:Key="GreyButtonStyle" TargetType="Button">
+				<Setter Property="BackgroundColor" Value="Transparent" />
+				<Setter Property="BorderWidth" Value="0" />
+				<Setter Property="TextColor" Value="#7F8592" />
+			</Style>
+			
+			<Style TargetType="Button">
+				<Setter Property="BackgroundColor" Value="Transparent" />
+				<Setter Property="BorderWidth" Value="0" />
+			</Style>
+		</ResourceDictionary>
+	</Application.Resources>
 </Application>
