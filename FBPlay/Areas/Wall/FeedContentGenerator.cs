@@ -40,7 +40,7 @@ namespace FBPlay
         public List<IFeedItemViewModel> GenerateFeedItem(int count)
         {
             var items = new List<IFeedItemViewModel>();
-            items.Add(new WhatOnYourMindViewModel() { AuthorPhoto = "michael.jpg"});
+            items.Add(new WhatOnYourMindViewModel() { AuthorPhoto = "michael.jpg" });
 
             for (int i = 1; i < count; i++)
             {
@@ -63,6 +63,7 @@ namespace FBPlay
                 ImageUrl = "beach1.jpeg",
 
                 LikeCount = 2,
+                EmojiTypes = new List<string> { "Cool.png", "LOL.png" },
                 CommentCount = 5
             };
         }
@@ -95,6 +96,7 @@ namespace FBPlay
                 ImageUrl = "beach2.jpg",
 
                 LikeCount = 4,
+                EmojiTypes = new List<string> { "Cool.png", "LOL.png", "Wink.png" },
                 CommentCount = 9
             };
         }
@@ -111,6 +113,7 @@ namespace FBPlay
                 ImageUrl = "beach3.jpeg",
 
                 LikeCount = 1,
+                EmojiTypes = new List<string> { "Cool.png" },
                 CommentCount = 3
             };
         }
@@ -127,6 +130,7 @@ namespace FBPlay
                 ImageUrl = "kid1.jpg",
 
                 LikeCount = 1,
+                EmojiTypes = new List<string> { "LOL.png" },
                 CommentCount = 3
             };
         }
@@ -143,6 +147,7 @@ namespace FBPlay
                 ImageUrl = "yoga1.jpg",
 
                 LikeCount = 1,
+                EmojiTypes = new List<string> { "Wink.png" },
                 CommentCount = 3
             };
         }

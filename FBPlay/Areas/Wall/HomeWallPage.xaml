@@ -57,8 +57,9 @@
             </StackLayout>
         </Grid>
         
-        <local:AdvancedListView BackgroundColor="#D7DBDF" HasUnevenRows="true" TranslationY="60" Grid.RowSpan="2" x:Name="myListView" 
-				ItemsSource="{Binding Items}" ItemTemplate="{StaticResource homeWallListTemplateSelector}" 
+        <local:AdvancedListView BackgroundColor="#D7DBDF" HasUnevenRows="true" TranslationY="60" Grid.RowSpan="2" 			x:Name="myListView" 
+				ItemsSource="{Binding Items}" ItemTemplate="{StaticResource homeWallListTemplateSelector}" SeparatorVisibility="None"
+
 				>      
         </local:AdvancedListView>
 

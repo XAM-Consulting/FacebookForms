@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using FFImageLoading.Forms;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -32,6 +33,29 @@ namespace FBPlay
 				CommentCount.Text = feedItemViewModel.LikeCount + " Comments";
 			}
 		}
+
+        protected override void OnBindingContextChanged()
+        {
+            base.OnBindingContextChanged();
+
+            var viewModel = this.BindingContext as FeedItemViewModel;
+            if (viewModel != null && LikeLayout.Children.Count == 0)
+            {
+                foreach (string imagesource in viewModel.EmojiTypes)
+                {
+                    var image = new CachedImage
+                    {
+                        HeightRequest = 20,
+                        WidthRequest = 20,
+                        Source = imagesource
+                    };
+                    LikeLayout.Children.Add(image);
+                }
+                var label = new Label { Text = $"{viewModel.LikeCount} Likes" };
+                LikeLayout.Children.Add(label);
+            }
+        }
+
 
         async void Handle_Clicked(object sender, System.EventArgs e)
         {
