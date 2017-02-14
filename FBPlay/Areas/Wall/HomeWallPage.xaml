@@ -4,10 +4,6 @@
 		<ResourceDictionary>
 			<DataTemplate x:Key="WhatsOnYourMindTemplate" >
 				<ViewCell>
-					<ViewCell.ContextActions>
-                      <MenuItem Text="Share" />
-                      <MenuItem Text="Buy" Command="{Binding AddToBasket}" />
-                    </ViewCell.ContextActions>
 					<ContentView>
                         <ContentView.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding FakeCommand}" ></TapGestureRecognizer>
@@ -26,9 +22,22 @@
 					</ContentView>
                 </ViewCell>
             </DataTemplate>
+			<DataTemplate x:Key="FeedItemNoImageTemplate">
+                <ViewCell>
+                    <ContentView>
+                        <ContentView.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding FakeCommand}" ></TapGestureRecognizer>
+                        </ContentView.GestureRecognizers>
+                        <local:PostViewNoImage Margin="0,5"></local:PostViewNoImage>
+                    </ContentView>
+                </ViewCell>
+            </DataTemplate>
+			
 			<local:HomeWallListDataTemplateSelector x:Key="homeWallListTemplateSelector"
                 WhatsOnYourMindTemplate="{StaticResource WhatsOnYourMindTemplate}"
-                FeedItemTemplate="{StaticResource FeedItemTemplate}" />
+                FeedItemTemplate="{StaticResource FeedItemTemplate}"
+				FeedItemNoImageTemplate="{StaticResource FeedItemNoImageTemplate}" />
+    
 		</ResourceDictionary>
 	</ContentPage.Resources>
     <Grid>

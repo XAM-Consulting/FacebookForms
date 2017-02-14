@@ -18,7 +18,7 @@
             </Entry.Effects>
 		</Entry>
     </StackLayout>
-    <Button Image="Video.png" Text="LIVE" TextColor="Black" FontAttributes="Bold" FontSize="10" Grid.Row="1" />
+    <Button Image="Video.png" Command="{Binding ShowLiveCommand}" Text="LIVE" TextColor="Black" FontAttributes="Bold" FontSize="10" Grid.Row="1" />
     <Button Image="Photo.png" Text="PHOTO" TextColor="Black" FontAttributes="Bold" FontSize="10" Grid.Row="1" Grid.Column="1"/>
     <Button Image="Marker.png" Text="CHECK IN" TextColor="Black" FontAttributes="Bold" FontSize="10" Grid.Row="1" Grid.Column="2"/>
 </Grid>

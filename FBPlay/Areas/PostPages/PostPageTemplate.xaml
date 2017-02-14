@@ -7,9 +7,8 @@
 		<RowDefinition Height="50" />
 		<RowDefinition Height="*"/>
 	</Grid.RowDefinitions>
-	<BoxView BackgroundColor="Gray"></BoxView>
-		
-	<Label Text="Post Page Template"></Label>
+	
+	<Button Text="Close Me" Clicked="Handle_Clicked" ></Button>
 	
 	<ContentPresenter Grid.Row="1"/>
 </Grid>

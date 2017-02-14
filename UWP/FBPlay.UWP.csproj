@@ -90,6 +90,11 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="project.json" />
+    <None Include="monkey.png" />
+    <None Include="animation_moon.png" />
+    <None Include="car.png" />
+    <None Include="house.png" />
+    <None Include="waterfront.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">

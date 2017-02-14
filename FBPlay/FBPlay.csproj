@@ -62,6 +62,14 @@
     <EmbeddedResource Include="Areas\PostPages\PostPageTemplate.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Areas\PostPages\CameraViewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>CameraViewPage.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\Wall\PostViewNoImage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>PostViewNoImage.xaml</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -112,6 +120,14 @@
       <DependentUpon>PostPageTemplate.xaml</DependentUpon>
     </Compile>
     <Compile Include="Extensions\DoubleExtensions.cs" />
+    <Compile Include="Areas\PostPages\AnimationView.cs" />
+    <Compile Include="Controls\CameraView.cs" />
+    <Compile Include="Areas\PostPages\CameraViewPage.xaml.cs">
+      <DependentUpon>CameraViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Wall\PostViewNoImage.xaml.cs">
+      <DependentUpon>PostViewNoImage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

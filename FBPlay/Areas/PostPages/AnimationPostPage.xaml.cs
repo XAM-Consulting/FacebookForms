@@ -11,5 +11,12 @@ namespace FBPlay
 		{
 			InitializeComponent();
 		}
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            animation.Animate();
+        }
 	}
 }

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local:InstrumentedGrid xmlns="http://xamarin.com/schemas/2014/forms" xmlns:fe="clr-namespace:FreshEssentials;assembly=FreshEssentials" 
+        xmlns:local="clr-namespace:FBPlay;assembly=FBPlay" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+        xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+        x:Class="FBPlay.PostViewNoImage"
+        BackgroundColor="White"
+        Padding="10">
+    <Grid.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding TappedCommand}" ></TapGestureRecognizer>
+    </Grid.GestureRecognizers>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" ></ColumnDefinition>
+        <ColumnDefinition Width="*" ></ColumnDefinition>
+        <ColumnDefinition Width="*" ></ColumnDefinition>
+        <ColumnDefinition Width="*" ></ColumnDefinition>
+        <ColumnDefinition Width="*" ></ColumnDefinition>
+        <ColumnDefinition Width="*" ></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="20"></RowDefinition>
+        <RowDefinition Height="20"></RowDefinition>
+        <RowDefinition Height="40"></RowDefinition>
+        <RowDefinition Height="2"></RowDefinition>
+        <RowDefinition Height="22"></RowDefinition>
+        <RowDefinition Height="35"></RowDefinition>
+    </Grid.RowDefinitions>
+
+    <ffimageloading:CachedImage DownsampleToViewSize="true" x:Name="AuthorPhoto" Grid.RowSpan="2" />
+    <Label x:Name="AuthorName" Grid.Column="1" Grid.ColumnSpan="5" />
+    <Label x:Name="Date" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" ></Label>
+
+    <Label x:Name="Content" Grid.Row="2" Grid.ColumnSpan="6" />
+    <!--<ffimageloading:CachedImage DownsampleToViewSize="true" x:Name="ImageUrl" Grid.Row="3" Grid.ColumnSpan="6" />-->
+
+    <Label Grid.Row="4"  Grid.ColumnSpan="3" x:Name="LikeCount" ></Label>
+    <Label Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3" HorizontalTextAlignment="End" x:Name="CommentCount" ></Label>
+    
+    <ContentView Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" x:Name="likeArea"  Opacity="0">
+        <fe:AdvancedFrame Padding="15, 4" HasShadow="true" OutlineColor="#EEEEEE" CornerRadius="70" Corners="all"  InnerBackground="White"  >
+            <local:GifImageViewControl  Aspect="AspectFill" Source="facebookreactionsanimation.gif"></local:GifImageViewControl>
+        </fe:AdvancedFrame>
+    </ContentView>
+    
+    <Button Image="Like.png" Grid.Row="5" Grid.ColumnSpan="2" Text="Like" Style="{StaticResource GreyButtonStyle}"></Button>
+    <Button Image="Comments.png" Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="2" Text="Comment" Style="{StaticResource GreyButtonStyle}"></Button>
+    <Button Image="Share.png" Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="4" Text="Share" Style="{StaticResource GreyButtonStyle}"></Button>
+
+</local:InstrumentedGrid>

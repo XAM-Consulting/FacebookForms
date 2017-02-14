@@ -19,13 +19,15 @@ namespace FBPlay
             _generators.Add(Kid);
 			_generators.Add(Yoga);
             _generators.Add(PanDemo);
+            _generators.Add(AnimationDemo);
+            //_generators.Add(PinchDemo);
         }
 
 		Command GetCommand()
 		{
 			return new Command(() =>
 			{
-				_navigation.PushAsync(new AnimationPostPage());
+                _navigation.PushAsync(new PinchDemoPage());
 			});
 		}
 
@@ -37,10 +39,18 @@ namespace FBPlay
 			});
 		}
 
+        Command AnimationSampleCommand()
+        {
+            return new Command(() =>
+            {
+                _navigation.PushModalAsync(new AnimationPostPage());
+            });
+        }
+
         public List<IFeedItemViewModel> GenerateFeedItem(int count)
         {
             var items = new List<IFeedItemViewModel>();
-            items.Add(new WhatOnYourMindViewModel() { AuthorPhoto = "michael.jpg" });
+            items.Add(new WhatOnYourMindViewModel(_navigation) { AuthorPhoto = "michael.jpg" });
 
             for (int i = 1; i < count; i++)
             {
@@ -83,6 +93,21 @@ namespace FBPlay
 				CommentCount = 5
 			};
 		}
+
+        FeedItemViewModel AnimationDemo()
+        {
+            return new FeedItemViewModel(AnimationSampleCommand())
+            {
+                AuthorPhoto = "michael.jpg",
+                Date = DateTime.Now,
+                AuthorName = "Mr Animation",
+
+                Content = "This is a Animation demo!",
+
+                LikeCount = 2,
+                CommentCount = 5
+            };
+        }
 
 		FeedItemViewModel Beach2()
         {

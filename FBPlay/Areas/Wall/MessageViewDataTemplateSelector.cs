@@ -7,10 +7,16 @@ namespace FBPlay
     {
         public DataTemplate WhatsOnYourMindTemplate { get; set; }
         public DataTemplate FeedItemTemplate { get; set; }
+        public DataTemplate FeedItemNoImageTemplate { get; set; }
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-            return item is WhatOnYourMindViewModel ? WhatsOnYourMindTemplate : FeedItemTemplate;
+            if (item is WhatOnYourMindViewModel)
+                return WhatsOnYourMindTemplate;
+            var feedItem = item as FeedItemViewModel;
+            if (string.IsNullOrEmpty(feedItem.ImageUrl))
+                return FeedItemNoImageTemplate;
+            return FeedItemTemplate;
         }
     }
 }

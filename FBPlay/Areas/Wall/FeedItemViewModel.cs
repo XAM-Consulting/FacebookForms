@@ -33,6 +33,22 @@ namespace FBPlay
 
     public class WhatOnYourMindViewModel : IFeedItemViewModel
     {
+        INavigation _navigation;
+        public WhatOnYourMindViewModel(INavigation navigation)
+        {
+            _navigation = navigation;
+        }
+
         public string AuthorPhoto { get; set; }
+        public Command ShowLiveCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    await _navigation.PushModalAsync(new CameraViewPage());
+                });
+            }
+        }
     }
 }
