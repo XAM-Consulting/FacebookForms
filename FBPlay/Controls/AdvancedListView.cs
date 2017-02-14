@@ -7,7 +7,7 @@ namespace FBPlay
     {
         public Action<Point> Scrolled { get; set; }
 
-		public AdvancedListView() : base(ListViewCachingStrategy.RecycleElement)
+        public AdvancedListView() : base(ListViewCachingStrategy.RecycleElement)
         {
         }
     }

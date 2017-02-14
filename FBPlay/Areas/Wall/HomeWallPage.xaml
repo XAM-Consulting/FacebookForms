@@ -67,9 +67,9 @@
         </Grid>
         
         <local:AdvancedListView BackgroundColor="#D7DBDF" HasUnevenRows="true" TranslationY="60" Grid.RowSpan="2" 			x:Name="myListView" 
-				ItemsSource="{Binding Items}" ItemTemplate="{StaticResource homeWallListTemplateSelector}" SeparatorVisibility="None"
-
-				>      
+				ItemsSource="{Binding Items}" ItemTemplate="{StaticResource homeWallListTemplateSelector}" 
+				SeparatorVisibility="None"
+				> 
         </local:AdvancedListView>
 
 		<!--<BoxView x:Name="panContainer" Grid.RowSpan="2" BackgroundColor="Transparent" >

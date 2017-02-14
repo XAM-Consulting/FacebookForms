@@ -3,8 +3,6 @@ using System.Reflection;
 using System.Linq;
 using Xamarin.Forms.Xaml;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-
 namespace FBPlay
 {
     public partial class App : Application
