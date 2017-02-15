@@ -6,7 +6,7 @@ namespace FBPlay
 {
     public class FeedContentGenerator
     {
-        List<Func<FeedItemViewModel>> _generators = new List<Func<FeedItemViewModel>>();
+        List<Func<IFeedItemViewModel>> _generators = new List<Func<IFeedItemViewModel>>();
         Random _random = new Random();
 		INavigation _navigation;
 
@@ -20,7 +20,7 @@ namespace FBPlay
 			_generators.Add(Yoga);
             _generators.Add(PanDemo);
             _generators.Add(AnimationDemo);
-            //_generators.Add(PinchDemo);
+            _generators.Add(LottieDemo);
         }
 
 		Command GetCommand()
@@ -76,6 +76,11 @@ namespace FBPlay
                 EmojiTypes = new List<string> { "Cool.png", "LOL.png" },
                 CommentCount = 5
             };
+        }
+
+        IFeedItemViewModel LottieDemo()
+        {
+            return new LottieAnimationViewModel();
         }
 
 		FeedItemViewModel PanDemo()

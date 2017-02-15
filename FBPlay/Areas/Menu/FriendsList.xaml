@@ -11,6 +11,9 @@
         		<SearchBar.Effects>
 					<local:CustomSearchBarEffects PlaceHolderBackgroundColor="{StaticResource FriendListGrey}"/>
 				</SearchBar.Effects>
+				<SearchBar.Behaviors>
+                    <local:NameValidationBehavior />
+				</SearchBar.Behaviors>
 			</SearchBar>
 			<Image HeightRequest="30" VerticalOptions="Center" Source="gearicon.png" ></Image>
 		</StackLayout>

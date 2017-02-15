@@ -14,6 +14,8 @@ namespace FBPlay.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
+            new Airbnb.Lottie.LAAnimationView();
+            new Lottie.Forms.AnimationView();                  
             new FreshEssentials.iOS.AdvancedFrameRendereriOS();
 
             CachedImageRenderer.Init();

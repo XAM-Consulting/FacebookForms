@@ -167,6 +167,7 @@
     <Compile Include="Effects\NoBorderEntryEffectiOS.cs" />
     <Compile Include="Renderers\CameraViewRenderer.cs" />
     <Compile Include="Renderers\MediaDevices.cs" />
+    <Compile Include="Renderers\LottieAnimationRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\facebookreactionsanimation.gif" />
@@ -199,6 +200,14 @@
     <BundleResource Include="Resources\house.png" />
     <BundleResource Include="Resources\waterfront.jpg" />
     <BundleResource Include="Resources\waterfront%402x.jpg" />
+    <BundleResource Include="Resources\9squares-AlBoardman.json" />
+    <BundleResource Include="Resources\HamburgerArrow.json" />
+    <BundleResource Include="Resources\LottieLogo1.json" />
+    <BundleResource Include="Resources\MotionCorpse-Jrcanest.json" />
+    <BundleResource Include="Resources\PinJump.json" />
+    <BundleResource Include="Resources\TwitterHeart.json" />
+    <BundleResource Include="Resources\vcTransition1.json" />
+    <BundleResource Include="Resources\Watermelon.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

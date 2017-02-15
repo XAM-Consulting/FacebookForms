@@ -177,6 +177,17 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\BrandonGrotesque-Regular.ttf" />
+    <AndroidAsset Include="Assets\OpenSans-Bold.ttf" />
+    <AndroidAsset Include="Assets\OpenSans-Regular.ttf" />
+    <AndroidAsset Include="Assets\OpenSans-Semibold.ttf" />
+    <AndroidAsset Include="Assets\9squares-AlBoardman.json" />
+    <AndroidAsset Include="Assets\HamburgerArrow.json" />
+    <AndroidAsset Include="Assets\LottieLogo1.json" />
+    <AndroidAsset Include="Assets\MotionCorpse-Jrcanest.json" />
+    <AndroidAsset Include="Assets\PinJump.json" />
+    <AndroidAsset Include="Assets\TwitterHeart.json" />
+    <AndroidAsset Include="Assets\vcTransition1.json" />
+    <AndroidAsset Include="Assets\Watermelon.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

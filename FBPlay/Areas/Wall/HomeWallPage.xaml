@@ -32,11 +32,22 @@
                     </ContentView>
                 </ViewCell>
             </DataTemplate>
+            <DataTemplate x:Key="LottieTemplate">
+                <ViewCell>
+                    <ContentView>
+                        <ContentView.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding FakeCommand}" ></TapGestureRecognizer>
+                        </ContentView.GestureRecognizers>
+                        <local:LottieAnimationView Margin="0,5"></local:LottieAnimationView>
+                    </ContentView>
+                </ViewCell>
+            </DataTemplate>
 			
 			<local:HomeWallListDataTemplateSelector x:Key="homeWallListTemplateSelector"
                 WhatsOnYourMindTemplate="{StaticResource WhatsOnYourMindTemplate}"
                 FeedItemTemplate="{StaticResource FeedItemTemplate}"
-				FeedItemNoImageTemplate="{StaticResource FeedItemNoImageTemplate}" />
+				FeedItemNoImageTemplate="{StaticResource FeedItemNoImageTemplate}"
+				LottieTemplate="{StaticResource LottieTemplate}" />
     
 		</ResourceDictionary>
 	</ContentPage.Resources>
@@ -45,6 +56,7 @@
             <RowDefinition Height="80"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
+		
 		<ContentView Grid.RowSpan="2" >
 		    <local:FriendsList x:Name="friendList" 
 					HorizontalOptions="Start" WidthRequest="300"			        

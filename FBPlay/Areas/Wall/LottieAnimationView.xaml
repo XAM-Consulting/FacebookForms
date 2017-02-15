@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FBPlay.LottieAnimationView">
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FBPlay.LottieAnimationView" 
+		xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+		>
 	<ContentView.Content>
+		<lottie:AnimationView BackgroundColor="White" HeightRequest="200" WidthRequest="200" x:Name="lottie"  />
 	</ContentView.Content>
 </ContentView>
